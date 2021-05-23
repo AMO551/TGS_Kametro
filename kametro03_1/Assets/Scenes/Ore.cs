@@ -69,7 +69,7 @@ public class Ore : MonoBehaviour
     //•¨‚ª’Ê‰ß‚µ‚½‚©Œ©‚é
     void OnCollisionEnter2D(Collision2D collision2d)
     {
-        Debug.Log("•¨‚É‚ ‚½‚Á‚½");
+        //Debug.Log("•¨‚É‚ ‚½‚Á‚½");
         //ƒvƒŒƒCƒ„[‚ª“–‚½‚Á‚Ä‚¢‚é‚©‚Ì”»’è
         if (collision2d.gameObject.CompareTag("Player"))
         {

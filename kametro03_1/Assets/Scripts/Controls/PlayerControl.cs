@@ -29,13 +29,13 @@ public class PlayerControl : MonoBehaviour
        if(Input.GetKey(KeyCode.RightArrow))
        {
            transform.Translate(5,0,0);
-           scale.x = 1;
+           scale.x = 100;
            direction = 1f;
        }
        else if(Input.GetKey(KeyCode.LeftArrow))
        {
            transform.Translate(-5,0,0);
-           scale.x = -1;
+           scale.x = -100;
            direction = -1f;
        }
        else
@@ -43,15 +43,15 @@ public class PlayerControl : MonoBehaviour
            direction = 0f;
        }
        transform.localScale = scale;
-
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var Box_pos = new Vector2(Player.transform.position.x + 10, 0);
-            var BlockIn = Instantiate(Block) as GameObject; //プレハブの作成
-            BlockIn.transform.position = Box_pos;
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.Space))
+       /*
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+           var Box_pos = new Vector2(Player.transform.position.x + 10,0);
+           var BlockIn = Instantiate(Block) as GameObject; //プレハブの作成
+           BlockIn.transform.position = Box_pos;
+       }
+       */
+       if(Input.GetKeyDown(KeyCode.Space))
        {
            //位置取得
            var pos = this.gameObject.transform.position;
