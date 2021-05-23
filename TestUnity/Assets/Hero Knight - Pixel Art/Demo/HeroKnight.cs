@@ -18,11 +18,12 @@ public class HeroKnight : MonoBehaviour {
     private Sensor_HeroKnight   m_wallSensorL2;
     private bool                m_grounded = false;
     private bool                m_rolling = false;
-    private float               m_facingDirection = 1.0f;
+    private int                 m_facingDirection = 1;
     private int                 m_currentAttack = 0;
     private float               m_timeSinceAttack = 0.0f;
     private float               m_delayToIdle = 0.0f;
-  
+
+
     // Use this for initialization
     void Start ()
     {
@@ -33,14 +34,11 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
-      
     }
 
     // Update is called once per frame
     void Update ()
     {
-      
-        //Debug.Log(Player_hp);
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
@@ -64,15 +62,14 @@ public class HeroKnight : MonoBehaviour {
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
-        
             GetComponent<SpriteRenderer>().flipX = false;
-            m_facingDirection = 1.0f;
+            m_facingDirection = 1;
         }
             
         else if (inputX < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            m_facingDirection = -1.0f;
+            m_facingDirection = -1;
         }
 
         // Move
@@ -133,7 +130,6 @@ public class HeroKnight : MonoBehaviour {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
             m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
-            
         }
             
 
@@ -177,7 +173,7 @@ public class HeroKnight : MonoBehaviour {
     {
         Vector3 spawnPosition;
 
-        if (m_facingDirection == 1.0f)
+        if (m_facingDirection == 1)
             spawnPosition = m_wallSensorR2.transform.position;
         else
             spawnPosition = m_wallSensorL2.transform.position;
@@ -190,5 +186,4 @@ public class HeroKnight : MonoBehaviour {
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
     }
-    
 }
