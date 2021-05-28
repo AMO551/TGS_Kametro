@@ -13,16 +13,13 @@ public class PlayerControl : MonoBehaviour
     public GameObject Block;
     private GameObject Player;
     private Vector2 Player_pos;
+    private int S_B = 0;
     //rivate GameType m_game = GameType.m_game;
     bool jump = false;
     float attspeed = 6.0f;
     float direction = 0f;
     Rigidbody2D rb2d;
-    public enum Gametype
-    {
-        
-    }
-
+    
     void Start()
     {
         Player_pos = GetComponent<Transform>().position;
@@ -58,8 +55,62 @@ public class PlayerControl : MonoBehaviour
             BlockIn.transform.position = Box_pos;
         }
         */
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            S_B -= 1;
+            if(S_B==-1)
+            {
+                S_B = 2;
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            S_B += 1;
+            if(S_B==2)
+            {
+                S_B = 0;
+            }
+
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            switch(S_B)
+            {
+                case 0:
+                    //位置取得
+                    var pos = this.gameObject.transform.position;
+                    //プレハブ用意
+                    var Block_pos = Instantiate(Block) as GameObject;
+                    //親子設定
+                    Block_pos.transform.SetParent(pouch);
+                    //座標に250プラス
+                    Block_pos.transform.position = new Vector2(pos.x + 150, pos.y);
+                    break;
+                case 1:
+                    //位置取得
+                    var pos = this.gameObject.transform.position;
+                    //プレハブ用意
+                    var Block_pos = Instantiate(Block) as GameObject;
+                    //親子設定
+                    Block_pos.transform.SetParent(pouch);
+                    //座標に250プラス
+                    Block_pos.transform.position = new Vector2(pos.x + 150, pos.y);
+                    break;
+                case 2:
+                    //位置取得
+                    var pos = this.gameObject.transform.position;
+                    //プレハブ用意
+                    var Block_pos = Instantiate(Block) as GameObject;
+                    //親子設定
+                    Block_pos.transform.SetParent(pouch);
+                    //座標に250プラス
+                    Block_pos.transform.position = new Vector2(pos.x + 150, pos.y);
+                    break;
+                default:
+                    break;
+
+            }
             
             ////位置取得
             //var pos = this.gameObject.transform.position;
