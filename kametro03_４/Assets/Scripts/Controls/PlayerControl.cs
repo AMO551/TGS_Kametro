@@ -40,14 +40,14 @@ public class PlayerControl : MonoBehaviour
         Vector2 scale = transform.localScale;
        if(Input.GetKey(KeyCode.RightArrow))
         { 
-            rb2d.MovePosition(new Vector3(transform.localPosition.x + speed, rd.position.y, 0)) ;
+            rb2d.AddForce(new Vector3(speed, 0, 0)) ;
             //transform.Translate(speed, 0, 0);
             scale.x = 100;
             direction = 1f;
         }
        else if(Input.GetKey(KeyCode.LeftArrow))
        {
-            rb2d.MovePosition(new Vector3(transform.localPosition.x - speed,rd.position.y, 0));
+            rb2d.AddForce(new Vector3(-speed, 0, 0));
             //     transform.Translate(-speed, 0, 0);
             scale.x = -100;
             direction = -1f;
@@ -140,7 +140,7 @@ public class PlayerControl : MonoBehaviour
            //親子設定
            Block_pos.transform.SetParent(pouch);
            //座標に250プラス
-           Block_pos.transform.position = new Vector2(pos.x + 150, pos.y);
+           Block_pos.transform.position = new Vector2(pos.x + 150 * direction, pos.y);
        }
        if(Input.GetKeyDown(KeyCode.LeftShift))
        {
