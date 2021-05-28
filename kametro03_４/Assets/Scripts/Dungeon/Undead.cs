@@ -54,14 +54,16 @@ public class Undead : MonoBehaviour
         //プレイヤーの座標を呼んでくる
         Vector3 pv = Player.transform.position;
         Vector3 ev = transform.position;
-        if (pv.x - ev.x <= 300 && -300 <= pv.x - ev.x)
+        if ((pv.x - ev.x) <= 300 && -300 <= (pv.x - ev.x))
         {
+
             //経過時間を数える
             countup += Time.deltaTime;
+            //Debug.Log(pv.x - ev.x);
             if (countup >= timeLimit)
             {
                 //経過時間を表示する
-                Debug.Log("2秒たった");
+               // Debug.Log("2秒たった");
                 //継続移動をtrueにする。
                 move = true;
                 //時間をリセットする
@@ -76,7 +78,7 @@ public class Undead : MonoBehaviour
                 float vx = 0f;
                 float vy = 0f;
 
-                float sp = 1f;
+                float sp = 500f;
 
                 // 減算した結果がマイナスであればXは減算処理
                 if (p_vX < 0)
@@ -106,7 +108,7 @@ public class Undead : MonoBehaviour
         }
 
         //敵が画面内に入ったタイミングで行動する
-   
+
         if (sr.isVisible)
         {
             int xVector = -1;
@@ -127,7 +129,7 @@ public class Undead : MonoBehaviour
             rb.Sleep();
         }
         //周囲1.5内にプレイヤーがいる場合呼び出される
-        if (pv.x - ev.x <= 1.5 && -1.5 >= pv.x - ev.x)
+        if (pv.x - ev.x <= 150 && -150 >= pv.x - ev.x)
         {
             Attack();
         }
@@ -140,6 +142,7 @@ public class Undead : MonoBehaviour
                 Debug.Log(hitPlayer.gameObject.name + "に攻撃");
                 //プレイヤーのHPを呼んでくる
                 script.Player_hp -= Undead_ATK;
+                Debug.Log(script.Player_hp);
 
             }
         }
@@ -150,6 +153,8 @@ public class Undead : MonoBehaviour
         if (collision.gameObject.tag == "Player")//条件式：衝突したオブジェクトのタグが"Player"の場合
         {
             Debug.Log("プレイヤーはダメージを受けた");
+      
+           // Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Enemy")//条件式：衝突したオブジェクトのタグが"Enemy"の場合
         {
@@ -171,6 +176,7 @@ public class Undead : MonoBehaviour
 
         }
     }
+  
 }
 
 

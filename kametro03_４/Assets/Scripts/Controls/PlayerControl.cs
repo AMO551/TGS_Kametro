@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -12,10 +13,16 @@ public class PlayerControl : MonoBehaviour
     public GameObject Block;
     private GameObject Player;
     private Vector2 Player_pos;
+    //rivate GameType m_game = GameType.m_game;
     bool jump = false;
     float attspeed = 6.0f;
     float direction = 0f;
     Rigidbody2D rb2d;
+    public enum Gametype
+    {
+        
+    }
+
     void Start()
     {
         Player_pos = GetComponent<Transform>().position;
@@ -43,15 +50,27 @@ public class PlayerControl : MonoBehaviour
            direction = 0f;
        }
        transform.localScale = scale;
-       /*
-       if(Input.GetKeyDown(KeyCode.Space))
-       {
-           var Box_pos = new Vector2(Player.transform.position.x + 10,0);
-           var BlockIn = Instantiate(Block) as GameObject; //プレハブの作成
-           BlockIn.transform.position = Box_pos;
-       }
-       */
-       if(Input.GetKeyDown(KeyCode.Space))
+        /*
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            var Box_pos = new Vector2(Player.transform.position.x + 10,0);
+            var BlockIn = Instantiate(Block) as GameObject; //プレハブの作成
+            BlockIn.transform.position = Box_pos;
+        }
+        */
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            
+            ////位置取得
+            //var pos = this.gameObject.transform.position;
+            ////プレハブ用意
+            //var Block_pos = Instantiate(Block) as GameObject;
+            ////親子設定
+            //Block_pos.transform.SetParent(pouch);
+            ////座標に250プラス
+            //Block_pos.transform.position = new Vector2(pos.x + 150, pos.y);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
        {
            //位置取得
            var pos = this.gameObject.transform.position;

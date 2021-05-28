@@ -7,7 +7,7 @@ public class EnemyControl : MonoBehaviour
 {
     public float nowPosi;
     public GameObject player;
-    public GameObject shot;
+    public GameObject W_a;
     private float targetTime = 1.0f;
     private float currentTime = 0;
     public Transform bullet;
@@ -24,7 +24,7 @@ public class EnemyControl : MonoBehaviour
         {
             currentTime = 0;
             var pos = this.gameObject.transform.position;
-            var t = Instantiate(shot,bullet) as GameObject;
+            var t = Instantiate(W_a,bullet) as GameObject;
             t.transform.position = pos;
             Vector2 vec = player.transform.position-pos;
             //Debug.Log(vec);
