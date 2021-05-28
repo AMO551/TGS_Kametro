@@ -1385,7 +1385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0.0033116657, y: 0, z: 0, w: 0.9999945}
-  m_LocalPosition: {x: 14.60083, y: -277.6988, z: 25.000221}
+  m_LocalPosition: {x: -101, y: -277.06622, z: 25.000221}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11940,12 +11940,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373cc833c80d8d14abb6d6fd95e1486b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  flap: 1000
+  speed: 2
+  flap: 500
   scroll: 5
   player_HP: 10
   pouch: {fileID: 1423871971}
   Block: {fileID: 6041345638174076904, guid: 8144e6f6756df73458dc9e3080116d45, type: 3}
+  exBlock: {fileID: 4786682486028634064, guid: 4d0bf9658c0e3e04a8fcb8b93636075a, type: 3}
+  rfBlock: {fileID: 5842290367527673024, guid: edc32f41a4d61d14a912cc7d8480b3d0, type: 3}
+  wgBlock: {fileID: 5976313992195660586, guid: aea218f99739bb94881c786ba350331a, type: 3}
 --- !u!50 &1781336693
 Rigidbody2D:
   serializedVersion: 4
@@ -11965,7 +11968,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1781336694
 BoxCollider2D:
