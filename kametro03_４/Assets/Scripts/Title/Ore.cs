@@ -71,7 +71,7 @@ public class Ore : MonoBehaviour
     {
         //Debug.Log("物にあたった");
         //プレイヤーが当たっているかの判定
-        if (collision2d.gameObject.CompareTag("Player"))
+        if (collision2d.gameObject.CompareTag("P_A"))
         {
             Debug.Log("プレイヤーを確認");
             //どの鉱石をたたいたのかの判定（A鉱石）

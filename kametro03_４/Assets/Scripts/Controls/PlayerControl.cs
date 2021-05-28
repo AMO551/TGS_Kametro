@@ -16,40 +16,47 @@ public class PlayerControl : MonoBehaviour
     public GameObject wgBlock;
     private GameObject Player;
     private Vector2 Player_pos;
+
     private int S_B = 0;
     //rivate GameType m_game = GameType.m_game;
     bool jump = false;
     float attspeed = 6.0f;
     float direction = 0f;
     Rigidbody2D rb2d;
+    Rigidbody2D rd;
     
     void Start()
     {
         Player_pos = GetComponent<Transform>().position;
         rb2d = GetComponent<Rigidbody2D>();
+        rd = GetComponent<Rigidbody2D>();
     }
 
     // 物理演算をしたい場合はFixedUpdateを使うのが一般的
     void Update()
     {
+        rd = GetComponent<Rigidbody2D>();
+        // rb2d = GetComponent<Rigidbody2D>();
         Vector2 scale = transform.localScale;
        if(Input.GetKey(KeyCode.RightArrow))
-       {
-           transform.Translate(speed,0,0);
-           scale.x = 100;
-           direction = 1f;
-       }
+        { 
+            rb2d.MovePosition(new Vector3(transform.localPosition.x + speed, rd.position.y, 0)) ;
+            //transform.Translate(speed, 0, 0);
+            scale.x = 100;
+            direction = 1f;
+        }
        else if(Input.GetKey(KeyCode.LeftArrow))
        {
-           transform.Translate(-speed,0,0);
-           scale.x = -100;
-           direction = -1f;
-       }
+            rb2d.MovePosition(new Vector3(transform.localPosition.x - speed,rd.position.y, 0));
+            //     transform.Translate(-speed, 0, 0);
+            scale.x = -100;
+            direction = -1f;
+        }
        else
        {
            direction = 0f;
        }
-       transform.localScale = scale;
+        transform.localScale = scale;
         /*
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -155,8 +162,9 @@ public class PlayerControl : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground")|| collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("mirror"))
         {
+            
             jump = false;
         }
     }

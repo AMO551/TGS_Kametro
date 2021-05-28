@@ -58,7 +58,7 @@ public class Recovery : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other2d)
     {
         //プレイヤーが当たっているかの判定
-        if (other2d.gameObject.CompareTag("Player"))
+        if (other2d.gameObject.CompareTag("P_A"))
         {
 
             //ダメージを与える関数をtrueにする
