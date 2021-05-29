@@ -67,9 +67,10 @@ public class Ore : MonoBehaviour
 
     }
     //物が通過したか見る
-    void OnCollisionEnter2D(Collision2D collision2d)
+    void OnTriggerEnter2D (Collider2D collision2d)
     {
-        //Debug.Log("物にあたった");
+        Debug.Log("鉱石ドロップ");
+        //Debug.Log("物にあたったa");
         //プレイヤーが当たっているかの判定
         if (collision2d.gameObject.CompareTag("P_A"))
         {

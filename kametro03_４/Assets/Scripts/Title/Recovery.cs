@@ -55,12 +55,12 @@ public class Recovery : MonoBehaviour
 
     }
     //物が通過したか見る
-    void OnCollisionEnter2D(Collision2D other2d)
+    void OnTriggerEnter2D(Collider2D other2d)
     {
         //プレイヤーが当たっているかの判定
         if (other2d.gameObject.CompareTag("P_A"))
         {
-
+            Debug.Log("回復した。");
             //ダメージを与える関数をtrueにする
             Updeta = true;
 

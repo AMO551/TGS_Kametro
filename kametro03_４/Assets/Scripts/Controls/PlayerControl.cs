@@ -95,7 +95,7 @@ public class PlayerControl : MonoBehaviour
                     //親子設定
                     exBlock_pos.transform.SetParent(pouch);
                     //座標に250プラス
-                    exBlock_pos.transform.position = new Vector2(pos_EX.x + 150, pos_EX.y);
+                    exBlock_pos.transform.position = new Vector2(pos_EX.x + 150 * direction, pos_EX.y);
                     break;
                 case 1:
                     //位置取得
@@ -105,7 +105,7 @@ public class PlayerControl : MonoBehaviour
                     //親子設定
                     rfBlock_pos.transform.SetParent(pouch);
                     //座標に250プラス
-                    rfBlock_pos.transform.position = new Vector2(pos_RF.x + 150, pos_RF.y);
+                    rfBlock_pos.transform.position = new Vector2(pos_RF.x + 150 *direction, pos_RF.y);
                     break;
                 case 2:
                     //位置取得
@@ -115,7 +115,7 @@ public class PlayerControl : MonoBehaviour
                     //親子設定
                     wgBlock_pos.transform.SetParent(pouch);
                     //座標に250プラス
-                    wgBlock_pos.transform.position = new Vector2(pos_WG.x + 150, pos_WG.y);
+                    wgBlock_pos.transform.position = new Vector2(pos_WG.x + 150 * direction, pos_WG.y);
                     break;
                 default:
                     break;

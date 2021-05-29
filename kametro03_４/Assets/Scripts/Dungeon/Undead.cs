@@ -115,11 +115,11 @@ public class Undead : MonoBehaviour
             if (rightTleftF)
             {
                 xVector = 1;
-                transform.localScale = new Vector3(-100, 200, 1);
+                transform.localScale = new Vector3(-100, 120, 1);
             }
             else
             {
-                transform.localScale = new Vector3(100, 200, 1);
+                transform.localScale = new Vector3(100, 120, 1);
             }
             //unityë§Ç≈êîílÇïœÇ¶ÇÁÇÍÇÈ    
             rb.velocity = new Vector2(xVector * Undead_speed, -gravity);
