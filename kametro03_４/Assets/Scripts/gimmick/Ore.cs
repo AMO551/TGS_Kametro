@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
-   
+
     public float ore_a = 0;          //zÎA‚Ì‰Šú‰»
     public float ore_b = 0;          //zÎB‚Ì‰Šú‰»
     public float ore_c = 0;          //zÎC‚Ì‰Šú‰»
@@ -14,6 +14,10 @@ public class Ore : MonoBehaviour
     private bool Ore_B = false;      //zÎA‚Ìfalse‚É‰Šú‰»
     private bool Ore_C = false;      //zÎA‚Ìfalse‚É‰Šú‰»
     private bool Ore_D = false;      //zÎA‚Ìfalse‚É‰Šú‰»
+    private bool Ore_E = false;      //zÎA‚Ìfalse‚É‰Šú‰»
+    private bool Ore_F = false;      //zÎA‚Ìfalse‚É‰Šú‰»
+    private bool Ore_G = false;      //zÎA‚Ìfalse‚É‰Šú‰»
+    private bool Ore_H = false;      //zÎA‚Ìfalse‚É‰Šú‰»
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +59,38 @@ public class Ore : MonoBehaviour
                 ore_b = 1;      //d—ÍzÎ1ŒÂ—^‚¦‚é
                 Ore_D = false;  //DzÎ
             }
+            //zÎE‚ªˆ—‚³‚ê‚Ä‚¢‚é‚©Œ©‚é
+            if (Ore_E == true)
+            {
+                ore_a = 1;@@@//”½ËzÎ1ŒÂ—^‚¦‚é
+                ore_b = 1;      //d—ÍzÎ1ŒÂ—^‚¦‚é
+                ore_c = 2;      //”š”­zÎ2ŒÂ—^‚¦‚é
+                Ore_E = false;  //AzÎ
+            }
+            //zÎF‚ªˆ—‚³‚ê‚Ä‚¢‚é‚©Œ©‚é
+            if (Ore_F == true)
+            {
+                ore_a = 1;      //”½ËzÎ1ŒÂ—^‚¦‚é
+                ore_b = 0;      //d—ÍzÎ0ŒÂ—^‚¦‚é
+                ore_c = 3;      //”š”­zÎ3ŒÂ—^‚¦‚é
+                Ore_F = false;  //BzÎ
+            }
+            //zÎG‚ªˆ—‚³‚ê‚Ä‚¢‚é‚©Œ©‚é
+            if (Ore_G == true)
+            {
+                ore_a = 1;      //”½ËzÎ1ŒÂ—^‚¦‚é
+                ore_b = 2;      //d—ÍzÎ2ŒÂ—^‚¦‚é
+                ore_c = 1;      //”š”­zÎ1ŒÂ—^‚¦‚é
+                Ore_G = false;  //CzÎ
+            }
+            //zÎH‚ªˆ—‚³‚ê‚Ä‚¢‚é‚©Œ©‚é
+            if (Ore_H == true)
+            {
+                ore_a = 2;      //”½ËzÎ2ŒÂ—^‚¦‚é
+                ore_b = 0;      //d—ÍzÎ0ŒÂ—^‚¦‚é
+                ore_c = 2;      //”š”­zÎ2ŒÂ—^‚¦‚é
+                Ore_H = false;  //DzÎ
+            }
             Updeta = false;     //update‚Ìfalse‚É‚·‚é
         }
         else
@@ -67,7 +103,7 @@ public class Ore : MonoBehaviour
 
     }
     //•¨‚ª’Ê‰ß‚µ‚½‚©Œ©‚é
-    void OnTriggerEnter2D (Collider2D collision2d)
+    void OnTriggerEnter2D(Collider2D collision2d)
     {
         Debug.Log("zÎƒhƒƒbƒv");
         //Debug.Log("•¨‚É‚ ‚½‚Á‚½a");
@@ -106,14 +142,54 @@ public class Ore : MonoBehaviour
                 //Updata‚ğtrue‚É‚·‚é
                 Updeta = true;
             }
-            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiDzÎj
-            if (gameObject.CompareTag("Ore_D"))
+            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiDzÎ)
             if (gameObject.CompareTag("Ore_D"))
             {
                 //zÎ‚ğÁ‚·
                 Destroy(gameObject);
                 //zÎD‚ğtrue‚É‚·‚é
                 Ore_D = true;
+                //Updata‚ğtrue‚É‚·‚é
+                Updeta = true;
+            }
+            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiEzÎj
+            if (gameObject.CompareTag("Ore_E"))
+            {
+                //zÎ‚ğÁ‚·
+                Destroy(gameObject);
+                //zÎA‚ğtrue‚É‚·‚é
+                Ore_E = true;
+                //Updata‚ğtrue‚É‚·‚é
+                Updeta = true;
+                Debug.Log("Ore_E‚ğŠm”F");
+            }
+            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiFzÎj
+            if (gameObject.CompareTag("Ore_F"))
+            {
+                //zÎ‚ğÁ‚·
+                Destroy(gameObject);
+                //zÎB‚ğtrue‚É‚·‚é
+                Ore_F = true;
+                //Updata‚ğtrue‚É‚·‚é
+                Updeta = true;
+            }
+            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiGzÎj
+            if (gameObject.CompareTag("Ore_G"))
+            {
+                //zÎ‚ğÁ‚·
+                Destroy(gameObject);
+                //zÎC‚ğtrue‚É‚·‚é
+                Ore_G = true;
+                //Updata‚ğtrue‚É‚·‚é
+                Updeta = true;
+            }
+            //‚Ç‚ÌzÎ‚ğ‚½‚½‚¢‚½‚Ì‚©‚Ì”»’èiHzÎ
+            if (gameObject.CompareTag("Ore_H"))
+            {
+                //zÎ‚ğÁ‚·
+                Destroy(gameObject);
+                //zÎD‚ğtrue‚É‚·‚é
+                Ore_H = true;
                 //Updata‚ğtrue‚É‚·‚é
                 Updeta = true;
             }

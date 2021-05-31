@@ -52,11 +52,7 @@ public class PlayerControl : MonoBehaviour
             scale.x = -100;
             direction = -1f;
         }
-       else
-       {
-           direction = 0f;
-       }
-        transform.localScale = scale;
+       transform.localScale = scale;
         /*
         if(Input.GetKeyDown(KeyCode.Space))
         {

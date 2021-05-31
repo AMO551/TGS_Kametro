@@ -73,10 +73,10 @@ public class Undead : MonoBehaviour
             {
 
                 float p_vX = pv.x - ev.x;
-                float p_vY = pv.y - ev.y;
+                //float p_vY = pv.y - ev.y;
 
                 float vx = 0f;
-                float vy = 0f;
+                //float vy = 0f;
 
                 float sp = 500f;
 
@@ -90,7 +90,7 @@ public class Undead : MonoBehaviour
                     vx = sp;
                 }
 
-                // 減算した結果がマイナスであればYは減算処理
+                /*// 減算した結果がマイナスであればYは減算処理
                 if (p_vY < 0)
                 {
                     vy = -sp;
@@ -99,17 +99,13 @@ public class Undead : MonoBehaviour
                 {
                     vy = sp;
                 }
-
-                transform.Translate(vx / 30, vy / 30, 0);
+                */
+                transform.Translate(vx / 30, 0, 0);
 
                 move = false;
             }
 
-        }
-
-        //敵が画面内に入ったタイミングで行動する
-
-        if (sr.isVisible)
+        }else if (sr.isVisible)//敵が画面内に入ったタイミングで行動する
         {
             int xVector = -1;
             if (rightTleftF)
