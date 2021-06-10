@@ -9,14 +9,15 @@ public class PlayerControl : MonoBehaviour
     public float flap = 1000f;
     public float scroll = 5f;
     public float player_HP = 10;
+    public int debage = 0;
     public Transform pouch; 
     public GameObject Block;
     public GameObject exBlock;
     public GameObject rfBlock;
     public GameObject wgBlock;
+
     private GameObject Player;
     private Vector2 Player_pos;
-
     private int S_B = 0;
     //rivate GameType m_game = GameType.m_game;
     bool jump = false;
@@ -40,14 +41,14 @@ public class PlayerControl : MonoBehaviour
         Vector2 scale = transform.localScale;
        if(Input.GetKey(KeyCode.RightArrow))
         { 
-            rb2d.AddForce(new Vector3(speed, 0, 0)) ;
+            rb2d.AddForce(new Vector3(speed - debage, 0, 0)) ;
             //transform.Translate(speed, 0, 0);
             scale.x = 100;
             direction = 1f;
         }
        else if(Input.GetKey(KeyCode.LeftArrow))
        {
-            rb2d.AddForce(new Vector3(-speed, 0, 0));
+            rb2d.AddForce(new Vector3(-speed +debage, 0, 0));
             //     transform.Translate(-speed, 0, 0);
             scale.x = -100;
             direction = -1f;
