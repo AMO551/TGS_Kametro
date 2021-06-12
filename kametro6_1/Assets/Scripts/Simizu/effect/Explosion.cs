@@ -7,10 +7,11 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     private float explosionTime;
     private CircleCollider2D circleCollider;
+    public GameObject obj;
     private void Start()
     {
-        var obj = new GameObject("Blast");
-        gameObject.AddComponent<CircleCollider2D>();
+         obj = new GameObject("Blast");
+        obj.gameObject.AddComponent<CircleCollider2D>();
         var radius = circleCollider.radius;
         radius = 2;
 
@@ -20,6 +21,12 @@ public class Explosion : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        Destroy(gameObject);
+        Destroy(obj);
+    }
+
+ public void anin(Collision2D collision)
+    {
+
+        Destroy(collision.gameObject);
     }
 }

@@ -15,20 +15,20 @@ public class PoisonedWater : MonoBehaviour
     private bool update = false;   //プレイヤーが当たっているかの変数
     
     ///////////////////////////////////////////////////
-    GameObject Player2D;       //Playerを入れる変数
-    player script;                 //スクリプトを呼び出す変数
-    PlayerControl Player;
-    Rigidbody2D rd;
+    //GameObject Player2D;           //Playerを入れる変数
+    //player script;                 //スクリプトを呼び出す変数
+    PlayerControl Player;          //PlayerControlを取得
+    Rigidbody2D rd;                //Rigidbody2Dを取得
     /// //////////////////////////////////////////////
     // スタートに呼ばれる関数
     void Start()
     {
         ///////////////////////////////////////////////////////
         //Playerをオブジェクトの名前から取得して変数に格納する
-        Player2D= GameObject.Find("Player");
+        //Player2D= GameObject.Find("Player");
         //Playerの中にあるスクリプト（Player）を取得して変数に格納する
-        script = Player2D.GetComponent<player>();
-        rd = Player2D.GetComponent<Rigidbody2D>();
+        //script = Player2D.GetComponent<player>();
+        //rd = Player2D.GetComponent<Rigidbody2D>();
         ///////////////////////////////////////////////////////
         //テストログ
         Debug.Log("TEST　Log");
@@ -37,7 +37,7 @@ public class PoisonedWater : MonoBehaviour
     // 毎フレームごとに呼ばれる関数
     void Update()
     {
-        Player = Player2D.GetComponent<PlayerControl>();
+      //  Player = Player2D.GetComponent<PlayerControl>();
         //int PlayHP = script.Player_hp;
         //キャラクターが毒水に入ったかを判定する
         if (update == true)

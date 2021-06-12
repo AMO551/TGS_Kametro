@@ -1347,15 +1347,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074584666864158178, guid: f0f7233520752aa4f9b918d2d1b9c669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -957.54114
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 9074584666864158178, guid: f0f7233520752aa4f9b918d2d1b9c669, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -311.29263
+      value: -215
       objectReference: {fileID: 0}
     - target: {fileID: 9074584666864158178, guid: f0f7233520752aa4f9b918d2d1b9c669, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 9074584666864158178, guid: f0f7233520752aa4f9b918d2d1b9c669, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10534,7 +10534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344864198}
   m_LocalRotation: {x: -0.0033116657, y: 0, z: 0, w: 0.9999945}
-  m_LocalPosition: {x: -264.15234, y: -315.1521, z: 41.00022}
+  m_LocalPosition: {x: 155, y: -215.06622, z: 25.000217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11884,6 +11884,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1992366724}
   - component: {fileID: 1992366723}
+  - component: {fileID: 1992366726}
+  - component: {fileID: 1992366725}
   m_Layer: 0
   m_Name: Brittle Rock
   m_TagString: brittle rock
@@ -11956,6 +11958,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1992366725
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992366722}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1992366726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992366722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac24b96af87e094198d849586adb55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1997409762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11981,15 +12021,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1602761598801950891, guid: 858894a3784005442bbb4c3f0600ca8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -957.54114
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 1602761598801950891, guid: 858894a3784005442bbb4c3f0600ca8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -311.35886
+      value: -215.06622
       objectReference: {fileID: 0}
     - target: {fileID: 1602761598801950891, guid: 858894a3784005442bbb4c3f0600ca8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.00022
+      value: 25.000217
       objectReference: {fileID: 0}
     - target: {fileID: 1602761598801950891, guid: 858894a3784005442bbb4c3f0600ca8b, type: 3}
       propertyPath: m_LocalRotation.w
