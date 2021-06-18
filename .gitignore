@@ -58,7 +58,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-kametro03/Assets*
+kametro03_4/Assets*
 *.json
 *.asset
 *.txt
+kametro03_４/Library/*
+kametro03_４/Logs/*
+kametro03_４/Temp/*
+kametro03_４/.vsconfig

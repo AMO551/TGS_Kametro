@@ -1,0 +1,421 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.5f1 (e2c53f129de5) revision 14861631'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1052; Version 2009; 64bit' Language: 'ja' Physical Memory: 32669 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/ryuta/デスクトップ/TGS_Kametro-main/TGS_Kametro-main/kametro6_1
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52306
+Successfully changed project path to: C:/Users/ryuta/デスクトップ/TGS_Kametro-main/TGS_Kametro-main/kametro6_1
+C:/Users/ryuta/デスクトップ/TGS_Kametro-main/TGS_Kametro-main/kametro6_1
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 17.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.5f1 (e2c53f129de5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ryuta/デスクトップ/TGS_Kametro-main/TGS_Kametro-main/kametro6_1/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 SUPER (ID=0x1f06)
+    Vendor:   
+    VRAM:     8031 MB
+    Driver:   27.21.14.6627
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001649 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 17.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.753 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001137 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.630 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1130 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.6 MB.
+System memory in use after: 57.7 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1572.
+Total: 1.275600 ms (FindLiveObjects: 0.130300 ms CreateObjectMapping: 0.041000 ms MarkObjects: 1.058400 ms  DeleteObjects: 0.045100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Simizu
+  artifactKey: Guid(3ac040151e5e58a498ef35cdf11c7824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu using Guid(3ac040151e5e58a498ef35cdf11c7824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '734658d6429b04907033ac1ebdbb8306') in 0.005204 seconds
+  Import took 0.006515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.391084 seconds.
+  path: Assets/Scripts/Simizu/Block
+  artifactKey: Guid(3fc9d625b99aa3643a95220cae9e4dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block using Guid(3fc9d625b99aa3643a95220cae9e4dcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd188b30851173000d3eda3a15dcfe9b3') in 0.003160 seconds
+  Import took 0.004564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.219173 seconds.
+  path: Assets/Scripts/Simizu/Block/BlockScript.cs
+  artifactKey: Guid(af532959f9de2db438d3d5bfa504a61a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/BlockScript.cs using Guid(af532959f9de2db438d3d5bfa504a61a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b18016fbdf03099e12248c86b1b4a40') in 0.019036 seconds
+  Import took 0.020432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.091576 seconds.
+  path: Assets/Scripts/Simizu/Block/BlockScript.cs
+  artifactKey: Guid(af532959f9de2db438d3d5bfa504a61a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/BlockScript.cs using Guid(af532959f9de2db438d3d5bfa504a61a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b18016fbdf03099e12248c86b1b4a40') in 0.002880 seconds
+  Import took 0.004229 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000806 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.583 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1136 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.7 MB.
+System memory in use after: 57.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1588.
+Total: 1.254400 ms (FindLiveObjects: 0.119700 ms CreateObjectMapping: 0.029200 ms MarkObjects: 1.093700 ms  DeleteObjects: 0.011200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 107.057146 seconds.
+  path: Assets/Scripts/Simizu/Block/ExBlockScript.cs
+  artifactKey: Guid(9363106ceb969ac43b350eafb3414468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/ExBlockScript.cs using Guid(9363106ceb969ac43b350eafb3414468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2255367ded2b288d6661bd6a1ebe49d6') in 0.006543 seconds
+  Import took 0.008354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.822450 seconds.
+  path: Assets/Scripts/Simizu/Block/RfBlockScript.cs
+  artifactKey: Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/RfBlockScript.cs using Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bd32a89d25a2470f4d9dab94721ba1e') in 0.004379 seconds
+  Import took 0.005809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000910 seconds.
+  path: Assets/Scripts/Simizu/Block/RfBlockScript.cs
+  artifactKey: Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/RfBlockScript.cs using Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bd32a89d25a2470f4d9dab94721ba1e') in 0.003526 seconds
+  Import took 0.004818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.801029 seconds.
+  path: Assets/Scripts/Simizu/Block/WgBlockScript.cs
+  artifactKey: Guid(9c43cf764d22ea849a2dc27278d97ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/WgBlockScript.cs using Guid(9c43cf764d22ea849a2dc27278d97ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f998495117c9f0e6a570ed1879722789') in 0.003173 seconds
+  Import took 0.004571 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000921 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.571 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1136 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.7 MB.
+System memory in use after: 57.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1591.
+Total: 1.255300 ms (FindLiveObjects: 0.105400 ms CreateObjectMapping: 0.026700 ms MarkObjects: 1.113300 ms  DeleteObjects: 0.009300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 472.485422 seconds.
+  path: Assets/Scripts/Simizu/Block/WgBlockScript.cs
+  artifactKey: Guid(9c43cf764d22ea849a2dc27278d97ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/WgBlockScript.cs using Guid(9c43cf764d22ea849a2dc27278d97ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb40faa061d45223b6b89bd0eef2b783') in 0.004322 seconds
+  Import took 0.005599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.921709 seconds.
+  path: Assets/Resources/Prefabs
+  artifactKey: Guid(35363a0bd69fef042b26cd5974dc0a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs using Guid(35363a0bd69fef042b26cd5974dc0a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e6cc51df3dab32882e3a92158104a1') in 0.003180 seconds
+  Import took 0.004594 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000757 seconds.
+  path: Assets/Resources/Prefabs
+  artifactKey: Guid(35363a0bd69fef042b26cd5974dc0a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs using Guid(35363a0bd69fef042b26cd5974dc0a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e6cc51df3dab32882e3a92158104a1') in 0.003097 seconds
+  Import took 0.004403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.066844 seconds.
+  path: Assets/Resources/Prefabs/Block
+  artifactKey: Guid(d1524e206dedb854397cf37654b97a4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block using Guid(d1524e206dedb854397cf37654b97a4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c660a9c76210e82fc0dda71cff6038b2') in 0.003063 seconds
+  Import took 0.004643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.069166 seconds.
+  path: Assets/Resources/Prefabs/Block/Block.prefab
+  artifactKey: Guid(8144e6f6756df73458dc9e3080116d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block/Block.prefab using Guid(8144e6f6756df73458dc9e3080116d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '241dc3ea9498a9ee7d35084d7773d19b') in 0.083096 seconds
+  Import took 0.084575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Resources/Prefabs/Block/exBlock.prefab
+  artifactKey: Guid(4d0bf9658c0e3e04a8fcb8b93636075a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block/exBlock.prefab using Guid(4d0bf9658c0e3e04a8fcb8b93636075a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57f7d0a74df654f21774341495644911') in 0.008505 seconds
+  Import took 0.009921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/Resources/Prefabs/Block/shot.prefab
+  artifactKey: Guid(d846c8356c3e3924fb63bddef419fe20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block/shot.prefab using Guid(d846c8356c3e3924fb63bddef419fe20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a32e10e75cf89df5797a5b1bdb01db0c') in 0.009131 seconds
+  Import took 0.010533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Resources/Prefabs/Block/rfBlock.prefab
+  artifactKey: Guid(edc32f41a4d61d14a912cc7d8480b3d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block/rfBlock.prefab using Guid(edc32f41a4d61d14a912cc7d8480b3d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aae6a702a11852808c55249b31a7860') in 0.008053 seconds
+  Import took 0.009483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/Resources/Prefabs/Block/wgBlock.prefab
+  artifactKey: Guid(aea218f99739bb94881c786ba350331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/Block/wgBlock.prefab using Guid(aea218f99739bb94881c786ba350331a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eadfbe440d8982246f4d19811ff3fed8') in 0.008041 seconds
+  Import took 0.009505 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000839 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.575 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1136 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.9 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1601.
+Total: 1.234000 ms (FindLiveObjects: 0.096300 ms CreateObjectMapping: 0.026200 ms MarkObjects: 1.102600 ms  DeleteObjects: 0.008100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000925 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.580 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1136 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.9 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1604.
+Total: 1.324700 ms (FindLiveObjects: 0.130100 ms CreateObjectMapping: 0.032100 ms MarkObjects: 1.152000 ms  DeleteObjects: 0.009600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 221.601894 seconds.
+  path: Assets/Scripts/Simizu/Block/RfBlockScript.cs
+  artifactKey: Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/Block/RfBlockScript.cs using Guid(93d300336997cbe4182f80a8fa4de685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90eb161aec2c99bdcf83bd5b6361448') in 0.004915 seconds
+  Import took 0.006284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.916765 seconds.
+  path: Assets/Scripts/Simizu/effect
+  artifactKey: Guid(a11150a91b27b994d8756fbc647bd782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect using Guid(a11150a91b27b994d8756fbc647bd782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74a8f6091c695fffb7bca3de76814506') in 0.003857 seconds
+  Import took 0.005309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000420 seconds.
+  path: Assets/Scripts/Simizu/effect
+  artifactKey: Guid(a11150a91b27b994d8756fbc647bd782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect using Guid(a11150a91b27b994d8756fbc647bd782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74a8f6091c695fffb7bca3de76814506') in 0.002929 seconds
+  Import took 0.004256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.870966 seconds.
+  path: Assets/Scripts/Simizu/effect/Elemental.cs
+  artifactKey: Guid(a117a40f28bea584f891146a0b5fca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Elemental.cs using Guid(a117a40f28bea584f891146a0b5fca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a219f35df05371eef91704ad57e773a') in 0.003102 seconds
+  Import took 0.004560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000995 seconds.
+  path: Assets/Scripts/Simizu/effect/Elemental.cs
+  artifactKey: Guid(a117a40f28bea584f891146a0b5fca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Elemental.cs using Guid(a117a40f28bea584f891146a0b5fca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a219f35df05371eef91704ad57e773a') in 0.002593 seconds
+  Import took 0.003897 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000889 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.584 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1135 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.9 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1606.
+Total: 1.384000 ms (FindLiveObjects: 0.167800 ms CreateObjectMapping: 0.033400 ms MarkObjects: 1.171000 ms  DeleteObjects: 0.011100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.648368 seconds.
+  path: Assets/Scripts/Simizu/effect/Explosion.cs
+  artifactKey: Guid(2f2146f7c34fbd944b2383100882dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Explosion.cs using Guid(2f2146f7c34fbd944b2383100882dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f24450a18980aff56ea748bf14ab3d') in 0.004348 seconds
+  Import took 0.006211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000452 seconds.
+  path: Assets/Scripts/Simizu/effect/Explosion.cs
+  artifactKey: Guid(2f2146f7c34fbd944b2383100882dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Explosion.cs using Guid(2f2146f7c34fbd944b2383100882dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f24450a18980aff56ea748bf14ab3d') in 0.003074 seconds
+  Import took 0.004545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.919716 seconds.
+  path: Assets/Scripts/Simizu/effect/Ice.cs
+  artifactKey: Guid(8651e1a04e6338f4a9d5d6532d2632cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Ice.cs using Guid(8651e1a04e6338f4a9d5d6532d2632cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a5199f0d6a5d25501047a5a26dbd183') in 0.003144 seconds
+  Import took 0.004642 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000937 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.566 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1135 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 60.9 MB.
+System memory in use after: 61.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1609.
+Total: 1.232300 ms (FindLiveObjects: 0.135900 ms CreateObjectMapping: 0.032600 ms MarkObjects: 1.053100 ms  DeleteObjects: 0.009000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 528.757308 seconds.
+  path: Assets/Scripts/Simizu/effect/Ice.cs
+  artifactKey: Guid(8651e1a04e6338f4a9d5d6532d2632cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Simizu/effect/Ice.cs using Guid(8651e1a04e6338f4a9d5d6532d2632cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25f40a6a69b7605730c56a09719f851') in 0.004881 seconds
+  Import took 0.006188 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
