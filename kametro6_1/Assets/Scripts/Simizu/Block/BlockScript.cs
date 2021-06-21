@@ -10,6 +10,7 @@ public class BlockScript : MonoBehaviour
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
+    
 
     private void Awake() 
     {
