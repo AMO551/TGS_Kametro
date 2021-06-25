@@ -24,7 +24,7 @@ public class KeyControlScript : MonoBehaviour
     // プレイヤーが地面上かどうかのフラグ
     public bool jumpflag = false;
     // プレイヤーの今の位置を入れる変数
-    Vector2 now_pos;
+    public Vector2 now_pos;
     // ブロックのフラグ
     private bool blockFlag = false;
     // 透明ブロックのフラグ
@@ -48,11 +48,16 @@ public class KeyControlScript : MonoBehaviour
     public GameObject Explosion_Block;
     // プレハブの親の入れ物
     public Transform CanvasTransform;
+    // ブロックの設置フラグ
+    public bool blockInstanllationflag = true;
     Vector2 scale;
+    BlockColliderScript blockcolliderScript;
+    public GameObject previewBlock;
     void Awake()
     {
         // PlayerのRigidbodyを取得
         rb2d = GetComponent<Rigidbody2D>();
+        blockcolliderScript = FakeBlock.GetComponent<BlockColliderScript>();
     }
     // Start is called before the first frame update
     void Start()
@@ -66,8 +71,7 @@ public class KeyControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 位置取得
-        now_pos = this.gameObject.transform.position;
+        
     }
     // プレイヤーの右移動
     public void MoveRight()
@@ -118,10 +122,9 @@ public class KeyControlScript : MonoBehaviour
     // ブロックの設置
     public void BlockInstanllation()
     {
-        FakeblockFlag = false;
         // 透明ブロックの削除
-        Destroy(FakeBlock);
-        if (blockFlag == true)
+        Destroy(previewBlock);
+        if (blockcolliderScript.BlockInstallationFlag == true)
             return;
         //位置取得
         var pos = this.gameObject.transform.position;
@@ -133,16 +136,24 @@ public class KeyControlScript : MonoBehaviour
     // 透明ブロックの設置
     public void FakeBlockInstanllation()
     {
+        blockInstanllationflag = false;
+        // 位置取得
+        now_pos = this.gameObject.transform.position;
         // プレハブ用意
-        var fakeBlock_pos = Instantiate(FakeBlock, new Vector2(now_pos.x + 150 * direction, now_pos.y), Quaternion.identity) as GameObject;
+        previewBlock = Instantiate(FakeBlock, new Vector2(now_pos.x + 150 * direction, now_pos.y), Quaternion.identity) as GameObject;
+        blockcolliderScript = previewBlock.GetComponent<BlockColliderScript>();
         // 親子関係
-        fakeBlock_pos.transform.parent = CanvasTransform.transform;
+        previewBlock.transform.parent = this.transform;
     }
     // スキルブロックの設置
     public void SkillBlockInstanllation()
     {
         switch (crystal){
             case Crystal.Reflect:
+                // 透明ブロックの削除
+                Destroy(previewBlock);
+                if (blockcolliderScript.BlockInstallationFlag == true)
+                    return;
                 // 位置取得
                 var Reflectpos = this.gameObject.transform.position;
                 // プレハブ用意+設置
@@ -152,6 +163,10 @@ public class KeyControlScript : MonoBehaviour
                 GameMainContol.Instance.PullCrystalCount();
                 break;
             case Crystal.Gravity:
+                // 透明ブロックの削除
+                Destroy(previewBlock);
+                if (blockcolliderScript.BlockInstallationFlag == true)
+                    return;
                 // 位置取得
                 var gravitypos = this.gameObject.transform.position;
                 // プレハブ用意+設置
@@ -160,6 +175,10 @@ public class KeyControlScript : MonoBehaviour
                 gravityBlock_pos.transform.parent = CanvasTransform.transform;
                 break;
             case Crystal.Explosion:
+                // 透明ブロックの削除
+                Destroy(previewBlock);
+                if (blockcolliderScript.BlockInstallationFlag == true)
+                    return;
                 // 位置取得
                 var Explosionpos = this.gameObject.transform.position;
                 // プレハブ用意+設置
@@ -171,6 +190,19 @@ public class KeyControlScript : MonoBehaviour
                 break;
         }
     }
+    // ブロックの設置キャンセル
+    public void BlockInsatnallationCancel()
+    {
+        Destroy(previewBlock);
+        blockInstanllationflag = true;
+    }
+    // プエイヤーが消える処理
+    /*
+    public void PlayerDestroyMove()
+    {
+        Destroy(this);
+    }
+    */
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("mirror"))

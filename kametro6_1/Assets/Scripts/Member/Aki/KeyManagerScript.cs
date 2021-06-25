@@ -5,7 +5,11 @@ using UnityEngine;
 public class KeyManagerScript : MonoBehaviour
 {
     private bool Jumpflag;
+    private bool blockflag;
+    //public float playerHp;
     public KeyControlScript keycontrolscript;
+    //public GameMainContol gamemaincotrol;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +19,10 @@ public class KeyManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        blockflag = keycontrolscript.blockInstanllationflag;
+        //playerHp = gamemaincotrol.player_HP;
         // プレイヤーの右移動
-        if(Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             KeyControlScript.instance.MoveRight();
         }
@@ -32,7 +38,7 @@ public class KeyManagerScript : MonoBehaviour
             KeyControlScript.instance.MoveJump();
         }
         // 通常ブロックの設置
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && blockflag == false)
         {
             KeyControlScript.instance.BlockInstanllation();
         }
@@ -41,15 +47,36 @@ public class KeyManagerScript : MonoBehaviour
         {
             KeyControlScript.instance.FakeBlockInstanllation();
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+                KeyControlScript.instance.BlockInsatnallationCancel();
+        }
         // スキルブロックの設置
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyUp(KeyCode.D) && blockflag == false)
         {
             KeyControlScript.instance.SkillBlockInstanllation();
         }
+        // 透明ブロックの設置
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            KeyControlScript.instance.FakeBlockInstanllation();
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+                KeyControlScript.instance.BlockInsatnallationCancel();
+        }
         // スキルブロックの切り替え
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             KeyControlScript.instance.CrystalChangeRight();
         }
+        /*
+        if(playerHp == 0)
+        {
+            KeyControlScript.instance.PlayerDestroyMove();
+        }
+        */
     }
 }
