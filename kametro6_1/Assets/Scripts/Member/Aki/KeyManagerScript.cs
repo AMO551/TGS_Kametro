@@ -27,12 +27,12 @@ public class KeyManagerScript : MonoBehaviour
             KeyControlScript.instance.MoveRight();
         }
         // プレイヤーの左移動
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             KeyControlScript.instance.MoveLeft();
         }
         // プレイヤーのジャンプ
-        if(Input.GetKeyDown(KeyCode.UpArrow) && keycontrolscript.jumpflag == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && keycontrolscript.jumpflag == false)
         {
             Debug.Log(Jumpflag);
             KeyControlScript.instance.MoveJump();
@@ -43,7 +43,7 @@ public class KeyManagerScript : MonoBehaviour
             KeyControlScript.instance.BlockInstanllation();
         }
         // 透明ブロックの設置
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             KeyControlScript.instance.FakeBlockInstanllation();
         }
@@ -53,7 +53,7 @@ public class KeyManagerScript : MonoBehaviour
                 KeyControlScript.instance.BlockInsatnallationCancel();
         }
         // スキルブロックの設置
-        if(Input.GetKeyUp(KeyCode.D) && blockflag == false)
+        if (Input.GetKeyUp(KeyCode.D) && blockflag == false)
         {
             KeyControlScript.instance.SkillBlockInstanllation();
         }

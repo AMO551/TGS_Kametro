@@ -62,7 +62,7 @@ public class KeyControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -71,7 +71,7 @@ public class KeyControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     // プレイヤーの右移動
     public void MoveRight()
@@ -102,7 +102,8 @@ public class KeyControlScript : MonoBehaviour
     // 宝石の切り替え
     public void CrystalChangeRight()
     {
-        switch(crystal){
+        switch (crystal)
+        {
             case Crystal.Normal:
                 crystal = Crystal.Reflect;
                 break;
@@ -148,7 +149,8 @@ public class KeyControlScript : MonoBehaviour
     // スキルブロックの設置
     public void SkillBlockInstanllation()
     {
-        switch (crystal){
+        switch (crystal)
+        {
             case Crystal.Reflect:
                 // 透明ブロックの削除
                 Destroy(previewBlock);
