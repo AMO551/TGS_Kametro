@@ -31,6 +31,7 @@ public class GetDisplay : MonoBehaviour
         //if内は仮置き
         if(!test)
         {
+            //反射宝石取得
             //Debug.Log("haitta");
             test = true;
             gettext.gameObject.SetActive(true);
@@ -40,6 +41,7 @@ public class GetDisplay : MonoBehaviour
         }
         if(!test)
         {
+            //重量宝石取得
             test = true;
             gettext.gameObject.SetActive(true);
             weight.gameObject.SetActive(true);
@@ -48,6 +50,7 @@ public class GetDisplay : MonoBehaviour
         }
         if(!test)
         {
+            //爆発宝石取得
             test = true;
             gettext.gameObject.SetActive(true);
             explosion.gameObject.SetActive(true);
@@ -58,6 +61,7 @@ public class GetDisplay : MonoBehaviour
     private IEnumerator Texthide()
     {
         //Debug.Log("コルーチン");
+        //5秒表示
         yield return new WaitForSeconds(5.0f);
 
         foreach(Transform item in this.transform)

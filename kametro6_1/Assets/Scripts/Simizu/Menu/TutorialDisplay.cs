@@ -35,6 +35,7 @@ public class TutorialDisplay : MonoBehaviour
     void Update()
     {
         var my_pos = transform.position;
+        //tutorial1の表示
         if(my_pos.x == 900 && !tu1)
         {
             if(tutoialUIInstance == null)
@@ -45,6 +46,7 @@ public class TutorialDisplay : MonoBehaviour
                 Debug.Log("tu1");
             }
         }
+        //tutorial2の表示
         if (my_pos.x == 1900 && !tu2)
         {
             if (tutoialUIInstance == null)
@@ -54,6 +56,7 @@ public class TutorialDisplay : MonoBehaviour
                 tu2 = true;
             }
         }
+        //tutorial3の表示
         if (my_pos.x == 2300 && !tu3)
         {
             if (tutoialUIInstance == null)
@@ -63,6 +66,7 @@ public class TutorialDisplay : MonoBehaviour
                 tu3 = true;
             }
         }
+        //tutorial4の表示
         if (my_pos.x == 3800 && !tu4)
         {
             if (tutoialUIInstance == null)
@@ -72,6 +76,7 @@ public class TutorialDisplay : MonoBehaviour
                 tu4 = true;
             }
         }
+        //tutorial5の表示
         if (my_pos.x == 4800 && !tu5)
         {
             if (tutoialUIInstance == null)
@@ -82,6 +87,7 @@ public class TutorialDisplay : MonoBehaviour
                 
             }
         }
+        //tutorial6の表示
         if (my_pos.x == 6000 && !tu6)
         {
             if (tutoialUIInstance == null)
@@ -93,7 +99,7 @@ public class TutorialDisplay : MonoBehaviour
         }
 
 
-
+        //戻るボタン
         if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown(KeyCode.Backspace))
         {
             Destroy(tutoialUIInstance);

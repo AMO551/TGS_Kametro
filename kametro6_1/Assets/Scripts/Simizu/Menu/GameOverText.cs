@@ -72,6 +72,7 @@ public class GameOverText : MonoBehaviour
             }
             if (pos.localPosition.y == -290)
             {
+                //ƒ^ƒCƒgƒ‹‚Ö
                 SceneManager.LoadScene("title");
                 goNextScene = true;
             }

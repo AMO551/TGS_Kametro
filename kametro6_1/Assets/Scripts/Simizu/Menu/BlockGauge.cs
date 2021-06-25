@@ -19,7 +19,7 @@ public class BlockGauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //0.1f毎に呼び出し
         timer += Time.deltaTime;
         if(timer > interval)
         {
@@ -31,6 +31,7 @@ public class BlockGauge : MonoBehaviour
    private void Gauge()
    {
         //Debug.Log("yobaeta");
+        //--ブロックの数を数える--
         tagObjects = GameObject.FindGameObjectsWithTag("Block");
         var block = tagObjects.Length;
         tagObjects = GameObject.FindGameObjectsWithTag("rfBlock");
@@ -43,8 +44,10 @@ public class BlockGauge : MonoBehaviour
         //Debug.Log(blocks);
         //img.GetComponent<Image>().fillAmount = gauge - timer / 25;
         //gauge = img.GetComponent<Image>().fillAmount;
+
+        //各ブロック数によるゲージ管理
         if (blocks == 0)
-        {
+        {   
             img.GetComponent<Image>().fillAmount = gauge + timer / 10;
         }
         if (blocks == 1)

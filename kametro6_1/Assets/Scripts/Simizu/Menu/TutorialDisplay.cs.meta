@@ -3,7 +3,13 @@ guid: be82fe5c49371074d9e1338fa983f259
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tutorialUI1: {fileID: 2750405621600953430, guid: 33aafa967652f4845879b7f7a15f0227, type: 3}
+  - tutorialUI2: {fileID: 8139982879033644147, guid: d03ade0e2d418d241b98195f0b66bf9b, type: 3}
+  - tutorialUI3: {fileID: 637418926651562765, guid: 68bfcd7382c6baf4eb7e68a9e38922e1, type: 3}
+  - tutorialUI4: {fileID: 8121597278670603400, guid: fe725ca7d8fcb2d4d8b54ef95145b05e, type: 3}
+  - tutorialUI5: {fileID: 2221984688085937358, guid: 54fd5862b98657d4eba0aced453a2256, type: 3}
+  - tutorialUI6: {fileID: 5625408997400540545, guid: e6411d74800689a40b5a097a725af4e5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
