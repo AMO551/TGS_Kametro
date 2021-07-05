@@ -12,6 +12,7 @@ public class RfBlockScript : MonoBehaviour
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
 
+    private Animator anime;
     private void Awake()
     {
         //コライダー2Dを取得
@@ -20,6 +21,8 @@ public class RfBlockScript : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         //子オブジェクトを取得
         explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
+
+        anime = transform.Find("rfanimetion").GetComponent<Animator>();
     }
 
     
@@ -37,13 +40,16 @@ public class RfBlockScript : MonoBehaviour
             //ブロック(this)を消す
             Destroy(this.gameObject);
         }
+        //遠距離
+        if(other.gameObject.tag == "Witch_ball")
+        {
+            anime.SetTrigger("rf");
+            StartCoroutine(DelayDestroy(explosionTime));
+        }
     }
     protected void OnHitHammer(Collision2D other)
     {
-        //カラーを一時保存
-        var color = spriteRenderer.color;
-        //透明化
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+       
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //----explosionの位置を攻撃された方向によって変更する----
@@ -57,17 +63,20 @@ public class RfBlockScript : MonoBehaviour
         var sign = Mathf.Sign(pos_diff_x);
         //explosionの当たり判定のオフセットを変更する
         var offset = boxCollider.offset;
-        offset.x *= sign;
+        offset.x = sign;
         explosion.offset = offset;
         //explosionのオブジェクトを有効化する
         explosion.gameObject.SetActive(true);
+
+        //デバッグ用
+        //anime.SetTrigger("rf");
 
         StartCoroutine(DelayDestroy(explosionTime));
     }
     //自身の破壊
     private IEnumerator DelayDestroy(float time)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 
         Destroy(gameObject);
     }

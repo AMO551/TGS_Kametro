@@ -11,6 +11,7 @@ public class WgBlockScript : MonoBehaviour
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
     private  Rigidbody2D rbody;
+    private Animator anime;
 
     private void Awake()
     {
@@ -22,11 +23,19 @@ public class WgBlockScript : MonoBehaviour
         explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
         //リジッドボディを取得
         rbody = GetComponent<Rigidbody2D>();
+
+        anime = transform.Find("wganimetion").GetComponent<Animator>();
     }
 
    
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //地面に落ちた時
+        if(other.gameObject.tag == "ground")
+        {
+            anime.SetTrigger("wg");
+            Invoke("AnimeEnd", 0.8f);
+        }
         //ハンマー攻撃の時
         if (other.gameObject.tag == "Hammer_atk")
         {
@@ -83,7 +92,7 @@ public class WgBlockScript : MonoBehaviour
         var sign = Mathf.Sign(pos_diff_x);
         //explosionの当たり判定のオフセットを変更する
         var offset = boxCollider.offset;
-        offset.x *= sign;
+        offset.x = sign;
         explosion.offset = offset;
         //explosionのオブジェクトを有効化する
         explosion.gameObject.SetActive(true);
@@ -96,5 +105,10 @@ public class WgBlockScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Destroy(gameObject);
+    }
+    private void AnimeEnd()
+    {
+        Debug.Log("animeowari");
+        anime.SetTrigger("wg");
     }
 }

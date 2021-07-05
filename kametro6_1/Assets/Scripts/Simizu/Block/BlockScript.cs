@@ -10,8 +10,8 @@ public class BlockScript : MonoBehaviour
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
-    
 
+    private Animator anim = null;
     private void Awake() 
     {
         //コライダー2Dを取得
@@ -20,6 +20,8 @@ public class BlockScript : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         //子オブジェクトを取得
         explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
+        //
+        anim = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -42,10 +44,7 @@ public class BlockScript : MonoBehaviour
     }
     protected void OnHitHammer(Collision2D other)
     {
-        //カラーを一時保存
-        var color = spriteRenderer.color;
-        //透明化
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //----explosionの位置を攻撃された方向によって変更する----
@@ -57,20 +56,26 @@ public class BlockScript : MonoBehaviour
         var pos_diff_x = my_pos.x - hammer_pos.x;
         //符号を判定
         var sign = Mathf.Sign(pos_diff_x);
+        Debug.Log(sign);
         //explosionの当たり判定のオフセットを変更する
         var offset = boxCollider.offset;
-        offset.x *= sign;
+        offset.x = sign;
         explosion.offset = offset;
         //explosionのオブジェクトを有効化する
         explosion.gameObject.SetActive(true);
+
+        //仮置き
+        //anim.SetTrigger("ex");
+        
 
         StartCoroutine(DelayDestroy(explosionTime));
     }
     //自身の破壊
     private IEnumerator DelayDestroy(float time)
     {
-        yield return new WaitForSeconds(1f);
-
+        Debug.Log("dex");
+        yield return new WaitForSeconds(0.8f);
+        
         Destroy(gameObject);
     }
 }

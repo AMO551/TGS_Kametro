@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3307454066694527140}
   - component: {fileID: 458002517527050912}
   - component: {fileID: 7327465260775471164}
+  - component: {fileID: 8632223547361823166}
   m_Layer: 0
   m_Name: exBlock
   m_TagString: exBlock
@@ -146,6 +147,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionTime: 0
+--- !u!95 &8632223547361823166
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786682486028634064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9657c2bad34a1cc478fb8f7c0a23f7ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7919662172514948456
 GameObject:
   m_ObjectHideFlags: 0
