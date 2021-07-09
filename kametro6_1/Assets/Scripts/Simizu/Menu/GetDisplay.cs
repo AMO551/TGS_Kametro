@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GetDisplay : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject getdisplay;
+
     private Text gettext;
     private GameObject reflection;
     private GameObject weight;
@@ -12,10 +15,10 @@ public class GetDisplay : MonoBehaviour
     private bool test = false;
     private void Awake()
     {
-        gettext = transform.Find("GetDisplay").gameObject.GetComponent<Text>();
-        reflection = transform.Find("GetDisplay/rf").gameObject;
-        weight = transform.Find("GetDisplay/wg").gameObject;
-        explosion = transform.Find("GetDisplay/ex").gameObject;
+        //gettext = GameObject.Find("GetDisplay").gameObject.GetComponent<Text>();
+        //reflection = GameObject.Find("GetDisplay/rf").gameObject;
+        //weight = GameObject.Find("GetDisplay/wg").gameObject;
+        //explosion = GameObject.Find("GetDisplay/ex").gameObject;
     }
     // Start is called before the first frame update
     void Start()
@@ -32,31 +35,60 @@ public class GetDisplay : MonoBehaviour
         if(!test)
         {
             //”½Ë•óÎæ“¾
-            //Debug.Log("haitta");
-            test = true;
-            gettext.gameObject.SetActive(true);
-            reflection.gameObject.SetActive(true);
-            gettext.text = "”½Ë‚ÌƒXƒLƒ‹•óÎ ~‚P";
+            Debug.Log("haitta");
+            //test = true;
+            Instantiate<GameObject>(getdisplay, transform);
+            //reflection.gameObject.SetActive(true);
+            //gettext.text = "”½Ë‚ÌƒXƒLƒ‹•óÎ ~‚P";
             StartCoroutine("Texthide");
         }
         if(!test)
         {
             //d—Ê•óÎæ“¾
             test = true;
-            gettext.gameObject.SetActive(true);
-            weight.gameObject.SetActive(true);
-            gettext.text = "d—Ê‚ÌƒXƒLƒ‹•óÎ ~‚P";
+            Instantiate<GameObject>(getdisplay, transform);
+            //weight.gameObject.SetActive(true);
+            //gettext.text = "d—Ê‚ÌƒXƒLƒ‹•óÎ ~‚P";
             StartCoroutine("Texthide");
         }
         if(!test)
         {
             //”š”­•óÎæ“¾
             test = true;
-            gettext.gameObject.SetActive(true);
+            Instantiate<GameObject>(getdisplay, transform);
             explosion.gameObject.SetActive(true);
             gettext.text = "”š”­‚ÌƒXƒLƒ‹•óÎ ~‚P";
             StartCoroutine("Texthide");
         }
+        ////“ñü–Ú
+        //if (test)
+        //{
+        //    //”½Ë•óÎæ“¾
+        //    //Debug.Log("haitta");
+        //    test = true;
+        //    Instantiate<GameObject>(getdisplay, transform);
+        //    reflection.gameObject.SetActive(true);
+        //    gettext.text = "”½Ë‚ÌƒXƒLƒ‹•óÎ ~‚P";
+        //    StartCoroutine("Texthide");
+        //}
+        //if (test)
+        //{
+        //    //d—Ê•óÎæ“¾
+        //    test = true;
+        //    Instantiate<GameObject>(getdisplay, transform);
+        //    weight.gameObject.SetActive(true);
+        //    gettext.text = "d—Ê‚ÌƒXƒLƒ‹•óÎ ~‚P";
+        //    StartCoroutine("Texthide");
+        //}
+        //if (test)
+        //{
+        //    //”š”­•óÎæ“¾
+        //    test = true;
+        //    Instantiate<GameObject>(getdisplay, transform);
+        //    explosion.gameObject.SetActive(true);
+        //    gettext.text = "”š”­‚ÌƒXƒLƒ‹•óÎ ~‚P";
+        //    StartCoroutine("Texthide");
+        //}
     }
     private IEnumerator Texthide()
     {

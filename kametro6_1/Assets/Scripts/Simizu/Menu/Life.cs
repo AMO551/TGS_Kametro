@@ -7,7 +7,7 @@ public class Life : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SetlifeGauge(7);
+        SetlifeGauge(7);
     }
 
     // Update is called once per frame
