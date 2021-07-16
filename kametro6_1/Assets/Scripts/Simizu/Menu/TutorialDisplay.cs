@@ -36,7 +36,7 @@ public class TutorialDisplay : MonoBehaviour
     {
         var my_pos = transform.position;
         //tutorial1の表示
-        if(my_pos.x == 900 && !tu1)
+        if(my_pos.x >= 900 && !tu1)
         {
             if(tutoialUIInstance == null)
             {
@@ -47,7 +47,7 @@ public class TutorialDisplay : MonoBehaviour
             }
         }
         //tutorial2の表示
-        if (my_pos.x == 1900 && !tu2)
+        if (my_pos.x >= 1900 && !tu2)
         {
             if (tutoialUIInstance == null)
             {
@@ -57,7 +57,7 @@ public class TutorialDisplay : MonoBehaviour
             }
         }
         //tutorial3の表示
-        if (my_pos.x == 2300 && !tu3)
+        if (my_pos.x >= 2300 && !tu3)
         {
             if (tutoialUIInstance == null)
             {
@@ -67,7 +67,7 @@ public class TutorialDisplay : MonoBehaviour
             }
         }
         //tutorial4の表示
-        if (my_pos.x == 3800 && !tu4)
+        if (my_pos.x >= 3800 && !tu4)
         {
             if (tutoialUIInstance == null)
             {
@@ -77,7 +77,7 @@ public class TutorialDisplay : MonoBehaviour
             }
         }
         //tutorial5の表示
-        if (my_pos.x == 4800 && !tu5)
+        if (my_pos.x >= 4800 && !tu5)
         {
             if (tutoialUIInstance == null)
             {
@@ -88,7 +88,7 @@ public class TutorialDisplay : MonoBehaviour
             }
         }
         //tutorial6の表示
-        if (my_pos.x == 6000 && !tu6)
+        if (my_pos.x >= 6000 && !tu6)
         {
             if (tutoialUIInstance == null)
             {
