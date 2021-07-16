@@ -6,19 +6,22 @@ public class ExBlockScript : MonoBehaviour
 {
     [SerializeField]
     private float explosionTime;
+    [SerializeField]
+    private GameObject ex_effect;
 
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
 
+    private Animator anim = null;
     private void Awake() 
     {
         //コライダー2Dを取得
         boxCollider = GetComponent<BoxCollider2D>();
         //スプライトレンダラーの取得
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //子オブジェクトを取得
-        explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
+
+        anim = GetComponent<Animator>();
     }
 
    
@@ -42,15 +45,12 @@ public class ExBlockScript : MonoBehaviour
     }
     protected void OnHitHammer(Collision2D other)
     {
-        //カラーを一時保存
-        var color = spriteRenderer.color;
-        //透明化
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //ここに爆破属性クラス？の呼び出しを書く
+        Instantiate<GameObject>(ex_effect, transform);
 
-
+        anim.SetTrigger("ex");
         StartCoroutine(DelayDestroy(explosionTime));
     }
     //自身の破壊

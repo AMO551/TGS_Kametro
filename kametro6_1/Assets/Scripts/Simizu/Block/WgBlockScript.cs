@@ -75,10 +75,7 @@ public class WgBlockScript : MonoBehaviour
     }
     protected void OnHitHammer(Collision2D other)
     {
-        //カラーを一時保存
-        var color = spriteRenderer.color;
-        //透明化
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+        
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //----explosionの位置を攻撃された方向によって変更する----
