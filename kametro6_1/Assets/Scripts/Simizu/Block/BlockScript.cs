@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BlockScript : MonoBehaviour
 {
+    #region 宣言
     [SerializeField]
     private float explosionTime;
-
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
-
+    public bool blockreversal = false;
+    #endregion
+    //Awake
     private void Awake() 
     {
+        SoundManager.Instance.Play_SE(2, 7);
         //コライダー2Dを取得
         boxCollider = GetComponent<BoxCollider2D>();
         //スプライトレンダラーの取得
@@ -20,27 +23,11 @@ public class BlockScript : MonoBehaviour
         //子オブジェクトを取得
         explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    #region 当たり判定,関数処理
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Hammer_atk"))
-        {
-            OnHitHammer(other);
-        }
-  
         //敵の攻撃の時
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy_atk"))
+        if(other.gameObject.tag == "Enemy_atk")
         {
             //近距離
             //ブロック(this)を消す
@@ -49,12 +36,18 @@ public class BlockScript : MonoBehaviour
             //ブロック(this)と敵の攻撃を消す
         }
     }
-    protected void OnHitHammer(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //カラーを一時保存
-        var color = spriteRenderer.color;
-        //透明化
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+        Debug.Log("トリガーが呼ばれた");
+        if (other.gameObject.tag == "P_A")
+        {
+            Debug.Log("プレイヤーアタックが呼ばれた");
+            OnHitHammer(other);
+        }
+    }
+    protected void OnHitHammer(Collider2D other)
+    {
+        #region 取得
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //----explosionの位置を攻撃された方向によって変更する----
@@ -66,19 +59,29 @@ public class BlockScript : MonoBehaviour
         var pos_diff_x = my_pos.x - hammer_pos.x;
         //符号を判定
         var sign = Mathf.Sign(pos_diff_x);
+        #endregion
+        if (sign<0)
+        {
+            blockreversal = true;
+        }
+        //Debug.Log(sign);
         //explosionの当たり判定のオフセットを変更する
         var offset = boxCollider.offset;
-        offset.x *= sign;
+        offset.x = sign;
         explosion.offset = offset;
         //explosionのオブジェクトを有効化する
         explosion.gameObject.SetActive(true);
-
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(DelayDestroy(explosionTime));
     }
+    #endregion
+    //自身の破壊
     private IEnumerator DelayDestroy(float time)
     {
-        yield return new WaitForSeconds(1f);
-
-        Destroy(gameObject);
+        Debug.Log("dex");
+        yield return new WaitForSeconds(0.8f);
+        
+        Destroy(gameObject,0.4f);
     }
 }
+

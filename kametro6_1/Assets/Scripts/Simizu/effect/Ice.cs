@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Ice : MonoBehaviour
 {
-    public Rigidbody2D rbody;
- 
-    public void Flost(Collision2D other)
+    GameObject gamemain_Obj;
+    GameMainContol gameMainContol;
+    //Start
+    private void Start()
     {
-
-        rbody = this.gameObject.GetComponent<Rigidbody2D>();
-        if (rbody != null)
+        gamemain_Obj =GameObject.Find("GameMainContol");
+        gameMainContol = gamemain_Obj.GetComponent<GameMainContol>();
+    }
+    //“–‚½‚è”»’è
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
         {
-            rbody.velocity = Vector2.zero;
-            rbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameMainContol.Player_Freeze();
         }
-
     }
 }
