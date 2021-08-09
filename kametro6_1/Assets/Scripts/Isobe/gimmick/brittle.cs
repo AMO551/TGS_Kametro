@@ -5,6 +5,8 @@ using UnityEngine;
 public class brittle : MonoBehaviour
 {
     //アニメーションの取得
+    Animator anime;
+
     //当たっているかの確認
     private void OnCollisionEnter2D(Collision2D collision)
     {

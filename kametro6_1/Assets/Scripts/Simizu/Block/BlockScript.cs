@@ -4,34 +4,28 @@ using UnityEngine;
 
 public class BlockScript : MonoBehaviour
 {
+    #region 宣言
     [SerializeField]
     private float explosionTime;
-
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
-
-    private Animator anim = null;
+    public bool blockreversal = false;
+    #endregion
+    //Awake
     private void Awake() 
     {
+        SoundManager.Instance.Play_SE(2, 7);
         //コライダー2Dを取得
         boxCollider = GetComponent<BoxCollider2D>();
         //スプライトレンダラーの取得
         spriteRenderer = GetComponent<SpriteRenderer>();
         //子オブジェクトを取得
         explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
-        //
-        anim = GetComponent<Animator>();
     }
-
+    #region 当たり判定,関数処理
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //ハンマー攻撃の時
-        if (other.gameObject.tag == "Hammer_atk")
-        {
-            OnHitHammer(other);
-        }
-  
         //敵の攻撃の時
         if(other.gameObject.tag == "Enemy_atk")
         {
@@ -42,9 +36,18 @@ public class BlockScript : MonoBehaviour
             //ブロック(this)と敵の攻撃を消す
         }
     }
-    protected void OnHitHammer(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
+        Debug.Log("トリガーが呼ばれた");
+        if (other.gameObject.tag == "P_A")
+        {
+            Debug.Log("プレイヤーアタックが呼ばれた");
+            OnHitHammer(other);
+        }
+    }
+    protected void OnHitHammer(Collider2D other)
+    {
+        #region 取得
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
         //----explosionの位置を攻撃された方向によって変更する----
@@ -56,26 +59,29 @@ public class BlockScript : MonoBehaviour
         var pos_diff_x = my_pos.x - hammer_pos.x;
         //符号を判定
         var sign = Mathf.Sign(pos_diff_x);
-        Debug.Log(sign);
+        #endregion
+        if (sign<0)
+        {
+            blockreversal = true;
+        }
+        //Debug.Log(sign);
         //explosionの当たり判定のオフセットを変更する
         var offset = boxCollider.offset;
         offset.x = sign;
         explosion.offset = offset;
         //explosionのオブジェクトを有効化する
         explosion.gameObject.SetActive(true);
-
-        //仮置き
-        //anim.SetTrigger("ex");
-        
-
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(DelayDestroy(explosionTime));
     }
+    #endregion
     //自身の破壊
     private IEnumerator DelayDestroy(float time)
     {
         Debug.Log("dex");
         yield return new WaitForSeconds(0.8f);
         
-        Destroy(gameObject);
+        Destroy(gameObject,0.4f);
     }
 }
+

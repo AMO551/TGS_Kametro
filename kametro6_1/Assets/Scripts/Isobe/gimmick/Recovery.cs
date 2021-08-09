@@ -11,6 +11,8 @@ public class Recovery : MonoBehaviour
     public int Max_HP = 100;
     //ブロック回復ブール
     public bool block =false;
+    //ブロック回復30
+    public float block_HL =0.3f ;
     //private--------------------
     //アップデートの初期化（false）
     private bool Updeta = false;
@@ -40,9 +42,12 @@ public class Recovery : MonoBehaviour
             {
                 //回復をするする
                 recovete = 30;
+                //ブロックを３０回復する
+              
+                
                 Player_HP += 30;
                 //今あるブロックを消す
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 //Debug.Log(recovete);
                 //回復したらPlayerのようでrecoveteをOにする
             }
@@ -55,8 +60,11 @@ public class Recovery : MonoBehaviour
                 Player_HP -= huri_HP;
 
             }
+            block_HL = 0.3f;
+            GameMainContol.Instance.BlockHealmeta(block_HL);
             //アップデートをfalseにする
             Updeta = false;
+           // Destroy(gameObject);
         }
         else
         {
@@ -77,6 +85,7 @@ public class Recovery : MonoBehaviour
             block = true;
             //ダメージを与える関数をtrueにする
             Updeta = true;
+            SoundManager.Instance.Play_SE(0, 18);
 
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WgBlockScript : MonoBehaviour
 {
+    #region 宣言
     [SerializeField]
     private float explosionTime;
 
@@ -12,7 +13,7 @@ public class WgBlockScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private  Rigidbody2D rbody;
     private Animator anime;
-
+    #endregion
     private void Awake()
     {
         //コライダー2Dを取得
@@ -26,29 +27,25 @@ public class WgBlockScript : MonoBehaviour
 
         anime = transform.Find("wganimetion").GetComponent<Animator>();
     }
-
-   
     private void OnCollisionEnter2D(Collision2D other)
     {
         //地面に落ちた時
-        if(other.gameObject.tag == "ground")
+        if (other.gameObject.tag == "ground")
         {
+            SoundManager.Instance.Play_SE(2, 9);
             anime.SetTrigger("wg");
             Invoke("AnimeEnd", 0.8f);
         }
-        //ハンマー攻撃の時
-        if (other.gameObject.tag == "Hammer_atk")
-        {
-            OnHitHammer(other);
-        }
+       
 
         //敵の攻撃の時
         if (other.gameObject.tag == "Enemy_atk")
         {
-            
+            //近距離
             //ブロック(this)を消す
             Destroy(this.gameObject);
-            
+            //遠距離
+            //ブロック(this)と敵の攻撃を消す
         }
         //水に当たった時
         if(other.gameObject.tag == "Water")
@@ -72,36 +69,6 @@ public class WgBlockScript : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
-    }
-    protected void OnHitHammer(Collision2D other)
-    {
-        
-        //自分の当たり判定をオフにする
-        boxCollider.enabled = false;
-        //----explosionの位置を攻撃された方向によって変更する----
-        //ハンマーの座標
-        var hammer_pos = other.transform.position;
-        //自分の座標
-        var my_pos = transform.position;
-        //x座標の差
-        var pos_diff_x = my_pos.x - hammer_pos.x;
-        //符号を判定
-        var sign = Mathf.Sign(pos_diff_x);
-        //explosionの当たり判定のオフセットを変更する
-        var offset = boxCollider.offset;
-        offset.x = sign;
-        explosion.offset = offset;
-        //explosionのオブジェクトを有効化する
-        explosion.gameObject.SetActive(true);
-
-        StartCoroutine(DelayDestroy(explosionTime));
-    }
-    //自身の破壊
-    private IEnumerator DelayDestroy(float time)
-    {
-        yield return new WaitForSeconds(1f);
-
-        Destroy(gameObject);
     }
     private void AnimeEnd()
     {

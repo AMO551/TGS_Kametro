@@ -12,7 +12,7 @@ public class Safe_Zone : MonoBehaviour
         //プレイヤーが当たっているか確認
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("セーブされた");
+            //Debug.Log("セーブされた");
             //セーブされたことを確認trueにする
             Save = true;
 

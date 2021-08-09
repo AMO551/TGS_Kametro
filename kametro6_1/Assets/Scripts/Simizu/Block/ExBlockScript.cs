@@ -4,59 +4,74 @@ using UnityEngine;
 
 public class ExBlockScript : MonoBehaviour
 {
+    #region 宣言
     [SerializeField]
     private float explosionTime;
-    [SerializeField]
-    private GameObject ex_effect;
 
     private BoxCollider2D boxCollider;
     private BoxCollider2D explosion;
     private SpriteRenderer spriteRenderer;
-
-    private Animator anim = null;
+    private bool EX = false;
+    #endregion
     private void Awake() 
     {
         //コライダー2Dを取得
         boxCollider = GetComponent<BoxCollider2D>();
         //スプライトレンダラーの取得
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        anim = GetComponent<Animator>();
+        //子オブジェクトを取得
+        explosion = transform.Find("Explosion").GetComponent<BoxCollider2D>();
     }
 
-   
-    private void OnCollisionEnter2D(Collision2D other)
+    // Start is called before the first frame update
+    void Start()
     {
-        //ハンマー攻撃の時
-        if (other.gameObject.tag == "Hammer_atk")
+        StartCoroutine("EX_End");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (EX)
+            this.gameObject.GetComponent<Explosion>().enabled = true;
+    }
+    IEnumerator EX_End()
+    {
+        yield return new WaitForSeconds(5f);
+        EX = true;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other);
+        if (other.gameObject.tag == "P_A")
+        {
+            OnHitHammer(other);
+        }else if (other.gameObject.tag == "Block_atk")
         {
             OnHitHammer(other);
         }
-        //ブロック攻撃の時
-        else if (other.gameObject.tag == "Block_atk")
-        {
-            OnHitHammer(other);
-        }
-        //エネミー攻撃の時
         else if (other.gameObject.tag == "Enemy_atk")
         {
             OnHitHammer(other);
         }
     }
-    protected void OnHitHammer(Collision2D other)
+    protected void OnHitHammer(Collider2D other)
     {
+        SoundManager.Instance.Play_SE(2, 7);
+        //カラーを一時保存
+        var color = spriteRenderer.color;
+        //透明化
+        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
         //自分の当たり判定をオフにする
         boxCollider.enabled = false;
-        //ここに爆破属性クラス？の呼び出しを書く
-        Instantiate<GameObject>(ex_effect, transform);
+        //explosionのオブジェクトを有効化する
+        explosion.gameObject.SetActive(true);
 
-        anim.SetTrigger("ex");
-        StartCoroutine(DelayDestroy(explosionTime));
+        StartCoroutine(DelSayDestroy(explosionTime));
     }
-    //自身の破壊
-    private IEnumerator DelayDestroy(float time)
+    private IEnumerator DelSayDestroy(float time=1f)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(time);
 
         Destroy(gameObject);
     }
