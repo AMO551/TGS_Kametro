@@ -24,7 +24,7 @@ public class ResultHitper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hitper.text = clearhitper.ToString() + "    " + hitperRank;
+        hitper.text = "–½’†—¦    " + clearhitper.ToString() + "    " + hitperRank;
     }
 
     // Update is called once per frame

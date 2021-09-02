@@ -19,7 +19,7 @@ public class ResultCont : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cont.text = clearcont.ToString() + "    " + contRank;
+        cont.text = "コンティニュー数    " + clearcont.ToString() + "    " + contRank;
     }
 
     // Update is called once per frame

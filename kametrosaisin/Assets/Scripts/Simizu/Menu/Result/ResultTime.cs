@@ -19,7 +19,7 @@ public class ResultTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time.text = cleartime.ToString() + "    " + timeRank;
+        time.text = "クリアタイム    " + cleartime.ToString() + "    " + timeRank;
     }
 
     // Update is called once per frame
