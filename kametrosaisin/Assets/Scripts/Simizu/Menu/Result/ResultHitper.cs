@@ -15,25 +15,18 @@ public class ResultHitper : MonoBehaviour
     private void Awake()
     {
         hitper = this.GetComponent<Text>();
-        //今適当なhitcount置いてるけどここに追加したやつ
-        //clearhit = gameMainContol.hitcount;
-        //clearb_hit = gameMainContol.b_atkcount;
         clearhitper = clearhit / clearb_atk * 100;
         Rank();
     }
     // Start is called before the first frame update
     void Start()
     {
+        //テキスト表示
         hitper.text = "命中率    " + clearhitper.ToString() + "    " + hitperRank;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void Rank()
     {
+        //ランク決定、総合ランク用スコア
         if (clearhitper >= 80)
         {
             hitperRank = "S";

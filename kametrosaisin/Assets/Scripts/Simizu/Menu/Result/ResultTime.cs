@@ -19,17 +19,19 @@ public class ResultTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //テキスト変更
         time.text = "クリアタイム    " + cleartime.ToString() + "    " + timeRank;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
     }
     private void Rank()
     {
-        if(cleartime < 600)
+        //ランク決定、総合ランク用スコア
+        if (cleartime < 600)
         {
             timeRank = "S";
             tscore = 4;

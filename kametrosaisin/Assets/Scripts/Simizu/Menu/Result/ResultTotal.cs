@@ -20,16 +20,12 @@ public class ResultTotal : MonoBehaviour
     {
         Debug.Log(totalRank);
         Debug.Log("a");
+        //テキスト表示
         total.text = "コンティニュー数    " + totalRank;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void Rank()
     {
+        //ランク決定、総合ランク用スコア
         var score = resultTime.tscore + resultCont.cscore + resultHitper.hscore;
         if(score >= 11)
         {

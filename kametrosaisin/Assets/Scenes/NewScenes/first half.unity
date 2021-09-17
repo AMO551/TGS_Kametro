@@ -776,6 +776,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 247041725}
     - target: {fileID: 6499518729140799192, guid: 586a96f40caf33f49be9e41628920294, type: 3}
+      propertyPath: setlife
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499518729140799192, guid: 586a96f40caf33f49be9e41628920294, type: 3}
       propertyPath: gameMainContol
       value: 
       objectReference: {fileID: 247041725}

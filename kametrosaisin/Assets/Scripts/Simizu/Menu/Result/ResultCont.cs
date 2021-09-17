@@ -19,16 +19,12 @@ public class ResultCont : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //テキスト表示
         cont.text = "コンティニュー数    " + clearcont.ToString() + "    " + contRank;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void Rank()
     {
+        //ランク決定、総合ランク用スコア
         if(clearcont == 0)
         {
             contRank = "S";

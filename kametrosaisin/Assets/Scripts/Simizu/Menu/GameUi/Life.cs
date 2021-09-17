@@ -24,6 +24,11 @@ public class Life : MonoBehaviour
     //life
     public void SetlifeGauge(int life)
     {
+        Debug.Log(life);
+        if(life > 10)
+        {
+            life = 10;
+        }
         for(int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
